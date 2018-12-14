@@ -1,0 +1,11 @@
+server:
+  port: 9092
+
+wyj:
+  config:
+    name: "wyj"
+
+business:
+  haha: "wyj"
+  businesses[0]: {"type_code": "1","type_name": "初级版",status: 1,"job_num": 2,"resume_num": 10}
+  businesses[1]: {"type_code": "2","type_name": "高级版",status: 0,"job_num": 5,"resume_num": 30}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wyj.alipay.springboot</groupId>
+    <artifactId>sb-base</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>sb-base</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>com.wyj.alipay.springboot</groupId>
+        <artifactId>sb-master</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.8</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- 添加了该插件后，运行 mvn package，该插件会介入mvn 打包过程，将mvn打好的包，重新打包为可正常执行的jar
+            并把原来的jar包重命名为 *.jar.original（他还有其他的作用，这只是其中之一）
+
+            如果没有这个配置，虽然本地可以直接运行，但是打出来的包，并不能直接通过java -jar的方式执行
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 当以 springboot 的 jar 包运行的时候，需要指定要运行的main 类 -->
+                <configuration>
+                    <mainClass>com.wyj.alipay.springboot.sbbase.SbBaseApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
