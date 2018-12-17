@@ -41,6 +41,18 @@
             <version>3.2.8</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- actuator endpoint 是敏感的，需要 security 来保证 安全
+            spring security 是非常强大的，有机会了 可以好好研究-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
 
     </dependencies>
 
@@ -54,7 +66,8 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- 当以 springboot 的 jar 包运行的时候，需要指定要运行的main 类 -->
+                <!-- 当以 springboot 的 jar 包运行的时候，需要指定要运行的main 类
+                    运行jar包： java -jar *.jar \-\-spring.profiles.active=wyj-->
                 <configuration>
                     <mainClass>com.wyj.alipay.springboot.sbbase.SbBaseApplication</mainClass>
                 </configuration>

@@ -9,3 +9,33 @@ business:
   haha: "wyj"
   businesses[0]: {"type_code": "1","type_name": "初级版",status: 1,"job_num": 2,"resume_num": 10}
   businesses[1]: {"type_code": "2","type_name": "高级版",status: 0,"job_num": 5,"resume_num": 30}
+
+
+# 关于endpoint 的了解，可以查看 注解EndPoint、类HealthEndpoint、类ShutdownEndpoint来加深理解
+# 关于更详细的endpoint信息，查看 https://www.jianshu.com/p/d5943e303a1f，另外还有一篇 [Spring Boot Metrics监控之Prometheus&Grafana]
+
+# 访问 host:9001/actuator 可以查看所有可以访问的接口，而且actuator 也可以在这里配置的
+management:
+  # 可以仔细一个个看看 management下的配置，都支持哪些，而且其中的注释也写的有点大概意思
+  # 配置 actuator（监控）服务访问的端口号
+  server:
+    port: 9001
+  endpoints:
+    web:
+      # 导出所有的endpoint，就是所有的监控接口都可以访问，默认之后health 和 info
+      exposure:
+        include: ["*"]
+  endpoint:
+    # 就算配置了暴漏出 所有的endpoint，shutdown endpoint 也不会暴漏，需要手动指定
+    # 另外也可以查看endpoint下面都有哪些配置，看看都可以配置endpoint的哪些属性
+    shutdown:
+      enabled: true
+
+
+spring:
+  security.:
+    user:
+      name: actuator
+      password: actuator
+      roles: ACTUATOR_ADMIN
+
