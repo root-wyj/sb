@@ -1,9 +1,10 @@
 server:
-  port: 9092
+  port: 9099
 
 wyj:
   config:
     name: "wyj"
+#    value: @pom.@
 
 business:
   haha: "wyj"

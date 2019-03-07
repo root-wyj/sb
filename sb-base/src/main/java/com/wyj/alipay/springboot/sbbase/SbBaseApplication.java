@@ -26,6 +26,8 @@ public class SbBaseApplication implements CommandLineRunner {
 
         System.out.println(env.getProperty("business_version"));
         System.out.println(env.getProperty("business_version.type_code"));
+        System.out.println(env.getProperty("wyj.config.name"));
+        System.out.println(env.getProperty("wyj.config.value"));
 
         System.out.println(business);
     }

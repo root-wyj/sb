@@ -21,6 +21,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
+        <fastjson.version>1.2.47</fastjson.version>
+        <lombok.version>1.16.22</lombok.version>
     </properties>
 
     <dependencies>
@@ -53,10 +56,43 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <!-- 这个是来保证扫描到 bootstrap配置文件的 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>6.6.0</version>
+        </dependency>
+
+        <!--fast json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
 
     </dependencies>
 
+    <!--<profiles>-->
+        <!--<profile>dev</profile>-->
+    <!--</profiles>-->
+
     <build>
+        <!--<filters>-->
+            <!--<filter>classpath:/application.yml</filter>-->
+        <!--</filters>-->
+
         <plugins>
             <!-- 添加了该插件后，运行 mvn package，该插件会介入mvn 打包过程，将mvn打好的包，重新打包为可正常执行的jar
             并把原来的jar包重命名为 *.jar.original（他还有其他的作用，这只是其中之一）
