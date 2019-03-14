@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.wyj.alipay.springboot</groupId>
+        <artifactId>sb-master</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>kafka</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>sb-kafka</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <kafka-version>2.1.0</kafka-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka-version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--<filters>-->
+        <!--<filter>classpath:/application.yml</filter>-->
+        <!--</filters>-->
+
+        <plugins>
+            <!-- 添加了该插件后，运行 mvn package，该插件会介入mvn 打包过程，将mvn打好的包，重新打包为可正常执行的jar
+            并把原来的jar包重命名为 *.jar.original（他还有其他的作用，这只是其中之一）
+
+            如果没有这个配置，虽然本地可以直接运行，但是打出来的包，并不能直接通过java -jar的方式执行
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 当以 springboot 的 jar 包运行的时候，需要指定要运行的main 类
+                    运行jar包： java -jar *.jar \-\-spring.profiles.active=wyj-->
+                <configuration>
+                    <mainClass>com.wyj.alipay.kafka.SbKafkaApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
