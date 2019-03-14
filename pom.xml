@@ -9,6 +9,7 @@
     <modules>
         <module>sb-base</module>
         <module>sb-kafka</module>
+        <module>sb-app</module>
     </modules>
     <packaging>pom</packaging>
 
