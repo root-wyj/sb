@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sb-master</artifactId>
+        <groupId>com.wyj.alipay.springboot</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wyj.alipay.springboot.app.api</groupId>
+    <artifactId>sb-app-api</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>app-test-api</module>
+    </modules>
+
+    <dependencies>
+
+        <!--现在也是简单的每一个api jar 都依赖所有的common-->
+        <dependency>
+            <groupId>com.wyj.alipay.springboot.common</groupId>
+            <artifactId>common-base</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wyj.alipay.springboot.common</groupId>
+            <artifactId>common-utils</artifactId>
+        </dependency>
+
+        <!-- @Id javax.persistence 包的依赖 spring-boot-starter-jdbc 下面的一个包-->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>

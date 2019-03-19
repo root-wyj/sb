@@ -10,6 +10,8 @@
         <module>sb-base</module>
         <module>sb-kafka</module>
         <module>sb-app</module>
+        <module>sb-app-api</module>
+        <module>sb-common</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -30,36 +32,19 @@
 
         <fastjson.version>1.2.47</fastjson.version>
         <lombok.version>1.16.22</lombok.version>
+        <swagger2.version>2.9.2</swagger2.version>
+        <mysql.connector.version>5.1.46</mysql.connector.version>
+        <mybatis.starter.version>1.3.2</mybatis.starter.version>
+        <tk.mybatis.version>2.1.2</tk.mybatis.version>
+        <pagehelper.starter.version>1.2.5</pagehelper.starter.version>
+        <druid.starter.version>1.1.10</druid.starter.version>
+        <javax.persistence.version>1.0</javax.persistence.version>
+
+        <project-version>0.0.1</project-version>
+        <project-app-version>0.0.1</project-app-version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
 
         <!-- log4j2 start -->
         <dependency>
@@ -98,16 +83,73 @@
                 <version>${lombok.version}</version>
             </dependency>
 
+            <!-- internal start -->
+            <dependency>
+                <groupId>com.wyj.alipay.springboot.common</groupId>
+                <artifactId>common-base</artifactId>
+                <version>${project-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.wyj.alipay.springboot.common</groupId>
+                <artifactId>common-utils</artifactId>
+                <version>${project-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.wyj.alipay.springboot.app.api</groupId>
+                <artifactId>app-test-api</artifactId>
+                <version>${project-app-version}</version>
+            </dependency>
+
+            <!-- internal end -->
+
+            <!--sql start-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${tk.mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>${javax.persistence.version}</version>
+            </dependency>
+            <!--mysql end-->
+
         </dependencies>
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
     </build>
 
 

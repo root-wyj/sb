@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sb-app</artifactId>
+        <groupId>com.wyj.alipay.springboot.app</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>app-test</artifactId>
+
+
+
+    <dependencies>
+        <!-- 每个应用都只引用自己的api 或者 可能回调用其他app的api，不需要全部统一引用-->
+        <dependency>
+            <groupId>com.wyj.alipay.springboot.app.api</groupId>
+            <artifactId>app-test-api</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--执行main方法入口-防止多个main无法打包-->
+                    <mainClass>com.wyj.alipay.springboot.app.test.AppTestApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
