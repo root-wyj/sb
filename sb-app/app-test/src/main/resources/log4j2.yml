@@ -17,7 +17,8 @@ Configuration:
     - name: log.path
       value: ./logs
     - name: project.name
-      value: lps-main # 项目名称
+      value: sb-test # 项目名称
+      # https://www.cnblogs.com/extjava/p/7553642.html 这篇文章说了 如何从pom里面读取属性然后可以在这里使用
 
   Appenders:
     Console:  # 输出到控制台

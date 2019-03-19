@@ -74,3 +74,6 @@ mybatis:
 
 server:
   port: 9000
+
+wyj:
+  test: @artifactId@
