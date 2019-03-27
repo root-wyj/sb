@@ -73,11 +73,4 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
 
 server:
-  port: 9000
-
-wyj:
-  tests: @artifactId@
-#  test:
-#    app:
-#      name: tom
-#      age: 14
+  port: 8000

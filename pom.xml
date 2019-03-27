@@ -12,6 +12,7 @@
         <module>sb-app</module>
         <module>sb-app-api</module>
         <module>sb-common</module>
+        <module>sb-simple-mybatis</module>
     </modules>
     <packaging>pom</packaging>
 

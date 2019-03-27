@@ -9,4 +9,6 @@ import com.wyj.alipay.springboot.common.base.core.service.IService;
  * Date: 2019/3/19
  */
 public interface IUserService extends IService<User> {
+
+    User selectById(long id);
 }
